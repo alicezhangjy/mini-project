@@ -1,0 +1,27 @@
+<!-- <h2>Users</h2> -->
+<div>
+    <mat-card class="example-card" class="container">
+        <mat-card-content>
+            <form class="example-form" #userParam="ngForm" (ngSubmit)="onSubmit(userParam.value)">
+                <input type="text" name="min" placeholder="min" ngModel><br><br>
+                <input type="text" name="max" placeholder="max" ngModel><br><br>
+                <input type="text" name="offset" placeholder="offset" ngModel><br><br>
+                <input type="text" name="limit" placeholder="limit" ngModel><br><br>
+                <input type="text" name="sort" placeholder="sort" ngModel><br><br>
+                <button class="button" type="submit">Query Data</button>
+            </form>
+        </mat-card-content>
+    <!-- </mat-card> -->
+    <div class="users-menu">
+        <mat-card-content *ngFor="let user of users">
+            <!-- <ng-container *ngFor="let user of users"> -->
+            <tr>
+                <td>
+                    <span>
+                        {{user.name}} :
+                        ${{user.salary}}</span>
+                </td>
+            </tr>
+            <!-- </ng-container> -->
+        </mat-card-content>
+    </div>
